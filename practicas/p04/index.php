@@ -32,5 +32,33 @@
 
         unset($_myvar,$_7var,$myvar,$var7,$_element1);
     ?>
+
+    <h2>Ejercicio 2</h2>
+    <p>Proporcionar los valores de $a, $b, $c como sigue:<br>
+    $a = “ManejadorSQL”;<br>
+    $b = 'MySQL’;<br>
+    $c = &$a;<br>
+    a. Ahora muestra el contenido de cada variable<br>
+    b. Agrega al código actual las siguientes asignaciones:<br>
+    $a = “PHP server”;<br>
+    $b = &$a;<br>
+    c. Vuelve a mostrar el contenido de cada uno<br></p>
+    <?php
+    $a = "ManejadorSQL";
+    $b = 'MySQL';
+    $c = &$a;
+    echo '$a: '.$a;
+    echo '$b: '.$b;
+    echo '$c: '.$c;
+    $a = "PHP server";
+    $b = &$a;
+    echo '$a: '.$a;
+    echo '$b: '.$b;
+    echo '$c: '.$c;
+    ?>
+    <p>Lo que ocurrió en la primera impresión fue el cambio de valor de la variable $a = "PHP server" 
+        y la variable $b = &$a, es decir, hace referencia a la variable $a (su valor). Entonces, al 
+    imprimir todas las variables, se imprime el mismo resultado "PHP server", esto porque tanto $b 
+    como $c hacen referencia a $a, por lo que el valor de ambos cambia cuando el de $a lo hace.</p>
 </body>
 </html>
