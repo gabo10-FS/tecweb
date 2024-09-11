@@ -129,5 +129,47 @@
         echo '$c: '.$c."<br>";
     ?>
 
+    <h2>Ejercicio 6</h2>
+    <p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
+    usando la función var_dump(<datos>).<br>
+    Después investiga una función de PHP que permita transformar el valor booleano de $c y $e
+    en uno que se pueda mostrar con un echo:<br>
+    $a = “0”;<br>
+    $b = “TRUE”;<br>
+    $c = FALSE;<br>
+    $d = ($a OR $b);<br>
+    $e = ($a AND $c);<br>
+    $f = ($a XOR $b);<br></p>
+    <?php 
+        $a = “0”;
+        $b = “TRUE”;
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+        echo '$a: ';
+        var_dump($a);
+        echo "<br>";
+        echo '$b: ';
+        var_dump($b);
+        echo "<br>";
+        echo '$c: ';
+        var_dump($c);
+        echo "<br>";
+        echo '$d: ';
+        var_dump($d);
+        echo "<br>";
+        echo '$e: ';
+        var_dump($e);
+        echo "<br>";
+        echo '$f: ';
+        var_dump($f);
+        echo "<br>";
+        echo 'Valores transformados a enteros usando la función intval() para $c y $e'."<br>";
+        echo '$c : '.intval($c)."<br>";
+        echo '$e : '.intval($e)."<br>";
+
+        unset($a,$b,$c,$d,$e,$f);
+    ?>
 </body>
 </html>
