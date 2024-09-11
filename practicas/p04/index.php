@@ -55,10 +55,40 @@
     echo '$a: '.$a;
     echo '$b: '.$b;
     echo '$c: '.$c;
+
+    unset($a,$b,$c);
     ?>
     <p>Lo que ocurrió en la primera impresión fue el cambio de valor de la variable $a = "PHP server" 
         y la variable $b = &$a, es decir, hace referencia a la variable $a (su valor). Entonces, al 
     imprimir todas las variables, se imprime el mismo resultado "PHP server", esto porque tanto $b 
     como $c hacen referencia a $a, por lo que el valor de ambos cambia cuando el de $a lo hace.</p>
+
+    <p2>Ejercicio 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
+    verificar la evolución del tipo de estas variables (imprime todos los componentes de los
+    arreglo):<br>
+    $a = “PHP5”;<br>
+    $z[] = &$a;<br>
+    $b = “5a version de PHP”;<br>
+    $c = $b*10;<br>
+    $a .= $b;<br>
+    $b *= $c;<br>
+    $z[0] = “MySQL”;<br></p>
+    <?php
+        $a = “PHP5”;
+        echo '$a: '.$a;
+        $z[] = &$a;
+        print_r ($z);
+        $b = "5a version de PHP";
+        echo '$b: '.$b;
+        $c = $b*10;
+        echo '$c: '.$c;
+        $a .= $b;
+        echo '$a: '.$a;
+        $b *= $c;
+        echo '$b: '.$b;
+        $z[0] = "MySQL";
+        print_r ($z);
+    ?>
 </body>
 </html>
