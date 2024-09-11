@@ -5,6 +5,7 @@
     <title>Práctica 3</title>
 </head>
 <body>
+    <h1>Practica 4: Manejo de variables con PHP</h1>
     <h2>Ejercicio 1</h2>
     <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
     <p>$_myvar,  $_7var,  myvar,  $myvar,  $var7,  $_element1, $house*5</p>
@@ -18,7 +19,7 @@
         $_element1;
         //$house*5;     // Invalida
         
-        echo '<h4>Respuesta:</h4>';   
+        echo '<h4>Solución:</h4>';   
     
         echo '<ul>';
         echo '<li>$_myvar es válida porque inicia con guión bajo.</li>';
@@ -37,24 +38,27 @@
     <p>Proporcionar los valores de $a, $b, $c como sigue:<br>
     $a = “ManejadorSQL”;<br>
     $b = 'MySQL’;<br>
-    $c = &$a;<br>
-    a. Ahora muestra el contenido de cada variable<br>
-    b. Agrega al código actual las siguientes asignaciones:<br>
+    $c = &$a;<br><br>
+    <b>a.</b> Ahora muestra el contenido de cada variable<br>
+    <b>b.</b> Agrega al código actual las siguientes asignaciones:<br><br>
     $a = “PHP server”;<br>
-    $b = &$a;<br>
-    c. Vuelve a mostrar el contenido de cada uno<br></p>
+    $b = &$a;<br><br>
+    <b>c.</b> Vuelve a mostrar el contenido de cada uno<br></p>
+    <p><b>Solución:<br></b></p>
     <?php
     $a = "ManejadorSQL";
     $b = 'MySQL';
     $c = &$a;
-    echo '$a: '.$a;
-    echo '$b: '.$b;
-    echo '$c: '.$c;
+    echo 'Inciso a.'."<br>";
+    echo '$a: '.$a."<br>";
+    echo '$b: '.$b."<br>";
+    echo '$c: '.$c."<br><br>";
     $a = "PHP server";
     $b = &$a;
-    echo '$a: '.$a;
-    echo '$b: '.$b;
-    echo '$c: '.$c;
+    echo 'Inciso b.'."<br>";
+    echo '$a: '.$a."<br>";
+    echo '$b: '.$b."<br>";
+    echo '$c: '.$c."<br>";
 
     unset($a,$b,$c);
     ?>
@@ -63,7 +67,7 @@
     imprimir todas las variables, se imprime el mismo resultado "PHP server", esto porque tanto $b 
     como $c hacen referencia a $a, por lo que el valor de ambos cambia cuando el de $a lo hace.</p>
 
-    <p2>Ejercicio 3</h2>
+    <h2>Ejercicio 3</h2>
     <p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
     verificar la evolución del tipo de estas variables (imprime todos los componentes de los
     arreglo):<br>
@@ -73,12 +77,14 @@
     $c = $b*10;<br>
     $a .= $b;<br>
     $b *= $c;<br>
-    $z[0] = “MySQL”;<br></p>
+    $z[0] = “MySQL”;<br><br></p>
+    <p><b>Solución:<br></b></p>
     <?php
-        $a = “PHP5”;
+        $a = "PHP5";
         echo '$a: '.$a."<br>";
         $z[] = &$a;
         print_r ($z);
+        echo "<br>";
         $b = "5a version de PHP";
         echo '$b: '.$b."<br>";
         @$c = $b*10;
@@ -89,27 +95,21 @@
         echo '$b: '.$b."<br>";
         $z[0] = "MySQL";
         print_r ($z);
-        unset($a,$b,$z,$c);
+        
     ?>
 
     <h2>Ejercicio 4</h2>
     <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
     la matriz $GLOBALS o del modificador global de PHP.</p>
+    <p><b>Solución:<br></b></p>
     <?php
-        $a = “PHP5”;
-        echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";
-        $z[] = &$a;
-        print_r ($GLOBALS['z']);
-        $b = "5a version de PHP";
-        echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
-        @$c = $b*10;
+        
+        echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";       
+        echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";       
         echo '$c en el ámbito global: '.$GLOBALS['c']."<br>";
-        $a .= $b;
-        echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";
-        $b = (int) $b * $c;
-        echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
-        $z[0] = "MySQL";
-        print_r ($GLOBALS['z']);
+        echo '$z en el ámbito global: ';print_r ($GLOBALS['z']);
+        echo "<br>";
+        
         unset($a,$b,$z,$c);
     ?>
 
@@ -119,6 +119,7 @@
     $b = (integer) $a;<br>
     $a = “9E3”;<br>
     $c = (double) $a;<br></p>
+    <p><b>Solución:<br></b></p>
     <?php 
         $a = "7 personas";
         $b = (integer) $a;
@@ -140,9 +141,10 @@
     $d = ($a OR $b);<br>
     $e = ($a AND $c);<br>
     $f = ($a XOR $b);<br></p>
+    <p><b>Solución:<br></b></p>
     <?php 
-        $a = “0”;
-        $b = “TRUE”;
+        $a = "0";
+        $b = "TRUE";
         $c = FALSE;
         $d = ($a OR $b);
         $e = ($a AND $c);
@@ -177,10 +179,11 @@
     a. La versión de Apache y PHP,<br>
     b. El nombre del sistema operativo (servidor),<br>
     c. El idioma del navegador (cliente).<br></p>
+    <p><b>Solución:<br></b></p>
     <?php 
-        echo 'Versión de APACHE y PHP: '.$_SERVER['SERVER_SOFTWARE'];
-        echo 'Nombre del sistema operativo (servidor): '. php_uname('s') . PHP_EOL;
-        echo 'Idioma del navegador (cliente): '.$_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        echo 'Versión de APACHE y PHP: '.$_SERVER['SERVER_SOFTWARE']."<br>";
+        echo 'Nombre del sistema operativo (servidor): '. PHP_OS."<br>";
+        echo 'Idioma del navegador (cliente): '.$_SERVER['HTTP_ACCEPT_LANGUAGE']."<br>";
     ?>
 </body>
 </html>
