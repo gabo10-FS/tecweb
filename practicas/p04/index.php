@@ -76,19 +76,44 @@
     $z[0] = “MySQL”;<br></p>
     <?php
         $a = “PHP5”;
-        echo '$a: '.$a;
+        echo '$a: '.$a."<br>";
         $z[] = &$a;
         print_r ($z);
         $b = "5a version de PHP";
-        echo '$b: '.$b;
-        $c = $b*10;
-        echo '$c: '.$c;
+        echo '$b: '.$b."<br>";
+        @$c = $b*10;
+        echo '$c: '.$c."<br>";
         $a .= $b;
-        echo '$a: '.$a;
-        $b *= $c;
-        echo '$b: '.$b;
+        echo '$a: '.$a."<br>";
+        $b = (int) $b * $c;
+        echo '$b: '.$b."<br>";
         $z[0] = "MySQL";
         print_r ($z);
+        unset($a,$b,$z,$c);
     ?>
+
+    <h2>Ejercicio 4</h2>
+    <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+    la matriz $GLOBALS o del modificador global de PHP.</p>
+    <?php
+        $a = “PHP5”;
+        echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";
+        $z[] = &$a;
+        print_r ($GLOBALS['z']);
+        $b = "5a version de PHP";
+        echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
+        $c = $b*10;
+        echo '$c en el ámbito global: '.$GLOBALS['c']."<br>";
+        $a .= $b;
+        echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";
+        $b *= $c;
+        echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
+        $z[0] = "MySQL";
+        print_r ($GLOBALS['z']);
+        unset($a,$b,$z,$c);
+    ?>
+
+    
+
 </body>
 </html>
