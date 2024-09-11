@@ -102,11 +102,11 @@
         print_r ($GLOBALS['z']);
         $b = "5a version de PHP";
         echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
-        $c = $b*10;
+        @$c = $b*10;
         echo '$c en el ámbito global: '.$GLOBALS['c']."<br>";
         $a .= $b;
         echo '$a en el ámbito global: '.$GLOBALS['a']."<br>";
-        $b *= $c;
+        $b = (int) $b * $c;
         echo '$b en el ámbito global: '.$GLOBALS['b']."<br>";
         $z[0] = "MySQL";
         print_r ($GLOBALS['z']);
@@ -170,6 +170,17 @@
         echo '$e : '.intval($e)."<br>";
 
         unset($a,$b,$c,$d,$e,$f);
+    ?>
+
+    <h2>Ejercicio 7</h2>
+    <p>Usando la variable predefinida $_SERVER, determina lo siguiente:<br>
+    a. La versión de Apache y PHP,<br>
+    b. El nombre del sistema operativo (servidor),<br>
+    c. El idioma del navegador (cliente).<br></p>
+    <?php 
+        echo 'Versión de APACHE y PHP: '.$_SERVER['SERVER_SOFTWARE'];
+        echo 'Nombre del sistema operativo (servidor): '. php_uname('s') . PHP_EOL;
+        echo 'Idioma del navegador (cliente): '.$_SERVER['HTTP_ACCEPT_LANGUAGE'];
     ?>
 </body>
 </html>
