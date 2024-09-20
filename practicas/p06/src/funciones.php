@@ -53,4 +53,30 @@
         $num = $cont*3;
         echo "$num números obtenidos en $cont iteraciones";
     }
+
+    function primerNumEnteroWhile(){
+        srand(time());
+        if(isset($_GET['numero']))
+        {
+            $num = $_GET['numero'];
+            $alea = rand(1,1000);
+            while($alea%$num != 0){
+                //echo $alea.'<br>';
+                $alea = rand(1,1000);
+            }
+            echo '<h3>R= El número '.$alea.' SÍ es múltiplo de '.$num.'</h3>';
+        }
+    }
+
+    function primerNumEnteroDoWhile(){
+        srand(time());
+        if(isset($_GET['numero']))
+        {
+            $num = $_GET['numero'];
+            do{
+                $alea = rand(1,1000);
+            }while($alea%$num != 0);
+            echo '<h3>R= El número '.$alea.' SÍ es múltiplo de '.$num.'</h3>';
+        }
+    }
 ?>
