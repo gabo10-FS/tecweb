@@ -20,7 +20,7 @@
                 if($sexo == "mujer"){
                     echo '<h2><em>Bienvenida</em>, usted está en el rango de edad permitido :D</h2>';
                 }else{
-                    echo '<h2><em>Bienvenido</em>, usted está en el rango de edad permitido :D</h2>';
+                    echo '<h1>ERROR</h1>'.'<br>'.'<h2>No cumple con los requisitos permitidos :(</h2>';
                 }
             }else{
                 echo '<h1>ERROR</h1>'.'<br>'.'<h2>Su edad está fuera del rango permitido :(</h2>';
