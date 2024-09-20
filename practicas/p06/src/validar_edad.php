@@ -6,25 +6,27 @@
 </head>
 <body style="background-color: lightblue">
     <?php
-        $edad = $_POST["edad"];
-        $sexo = $_POST["sexo"];
-        /*if($edad >= 18 && $edad <= 35 && $sexo == "mujer"){
-            echo 'Bienvenida, usted está en el rango de edad permitido :D';
-        }else{
-            echo '<b>'.'ERROR'.'</b>'.'<br>'.'Su edad está fuera del rango permitido';
-        }*/
-        //echo 'Tienes  ' . htmlspecialchars($_POST["edad"]) . '!';
-        echo '<center>';
-        if($edad >= 18 && $edad <= 35){
-            if($sexo == "mujer"){
-                echo '<h2><em>Bienvenida</em>, usted está en el rango de edad permitido :D</h2>';
+        if(isset($_POST["edad"]) && isset($_POST["sexo"])){
+            $edad = $_POST["edad"];
+            $sexo = $_POST["sexo"];
+            /*if($edad >= 18 && $edad <= 35 && $sexo == "mujer"){
+                echo 'Bienvenida, usted está en el rango de edad permitido :D';
             }else{
-                echo '<h2><em>Bienvenido</em>, usted está en el rango de edad permitido :D</h2>';
+                echo '<b>'.'ERROR'.'</b>'.'<br>'.'Su edad está fuera del rango permitido';
+            }*/
+            //echo 'Tienes  ' . htmlspecialchars($_POST["edad"]) . '!';
+            echo '<center>';
+            if($edad >= 18 && $edad <= 35){
+                if($sexo == "mujer"){
+                    echo '<h2><em>Bienvenida</em>, usted está en el rango de edad permitido :D</h2>';
+                }else{
+                    echo '<h2><em>Bienvenido</em>, usted está en el rango de edad permitido :D</h2>';
+                }
+            }else{
+                echo '<h1>ERROR</h1>'.'<br>'.'<h2>Su edad está fuera del rango permitido :(</h2>';
             }
-        }else{
-            echo '<h1>ERROR</h1>'.'<br>'.'<h2>Su edad está fuera del rango permitido :(</h2>';
+            echo '</center>';
         }
-        echo '</center>';
     ?>
 </body>
 </html>

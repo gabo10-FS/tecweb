@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro de autos</title>
+    </head>
+    <body>
+        <h1>Ejercicio 6</h1>
+        <form action="http://localhost/tecweb/practicas/p06/src/registro_autos.php" method="post">
+            <fieldset>
+                <legend>Consultar registros de autos</legend>
+                <ul>
+                    <li><input type="radio" name="info" value="unico" onclick="document.getElementById('mat').disabled=false;">Por matrícula
+                        <input type="text" id="mat" name="matricula" disabled></li>
+                    <li><input type="radio" name="info" value="todos" onclick="document.getElementById('mat').disabled=true;">Ver todos los registros</li>
+                    </li>
+                </ul>
+            </fieldset><br>
+            <input type="submit" value="Validar">
+        </form>
+    </body>
+</html>
