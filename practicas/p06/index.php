@@ -6,27 +6,20 @@
     <title>Práctica 4</title>
 </head>
 <body>
-    <form action="">
-        <h2>Ejercicio 1</h2>
-        <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
-        <ul>
-        <li>Nombre: <input type="text" name="number"> </li></ul>
-    </form>
     <h2>Ejercicio 1</h2>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
+    
     <?php
-        if(isset($_GET['numero']))
-        {
-            $num = $_GET['numero'];
-            if ($num%5==0 && $num%7==0)
-            {
-                echo '<h3>R= El número '.$num.' SÍ es múltiplo de 5 y 7.</h3>';
-            }
-            else
-            {
-                echo '<h3>R= El número '.$num.' NO es múltiplo de 5 y 7.</h3>';
-            }
-        }
+        include("src/funciones.php");
+        echo multiploDe();
+    ?>
+
+    <h2>Ejercicio 2</h2>
+    <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
+    secuencia compuesta por:<br>
+    impar, par, impar</p>
+    <?php 
+        echo tresNumerosAleatorios();
     ?>
 
     <h2>Ejemplo de POST</h2>
