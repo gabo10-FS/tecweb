@@ -25,8 +25,16 @@
     <h2>Ejercicio 3</h2>
     <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
     pero que además sea múltiplo de un número dado.</p>
+    
     <?php
         echo primerNumEnteroDoWhile();
+    ?>
+
+    <h2>Ejercicio 4</h2>
+    <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la 'a'
+    a la 'z'.</p>
+    <?php 
+        echo arregloASCII();
     ?>
 
     <h2>Ejemplo de POST</h2>

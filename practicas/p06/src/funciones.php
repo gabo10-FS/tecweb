@@ -79,4 +79,26 @@
             echo '<h3>R= El número '.$alea.' SÍ es múltiplo de '.$num.'</h3>';
         }
     }
+
+    function arregloASCII(){
+        for($i = 97; $i <= 122; $i++){
+            $ascii[$i] = chr($i);
+        }
+        echo '<table border = "1" cellspacing = "1" bgcolor = "91f972">
+        <caption>Código ASCII</caption>';
+        echo '<thead>
+                <tr>
+                    <th align = "center" bgcolor = "7286f9">Número</th>
+                    <th align = "center" bgcolor = "7286f9">Letra</th>
+                </tr>
+                </thead>';
+        echo '<tbody>';
+        foreach ($ascii as $key => $value) {
+            echo '<tr>';
+            echo '<td align = "center">'.$key.'</td>';
+            echo '<td align = "center">'.$value.'</td>';
+            echo '</tr>';
+        }
+        echo '</tbody></table>';
+    }
 ?>
