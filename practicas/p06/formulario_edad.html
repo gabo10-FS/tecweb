@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edad y Sexo</title>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Ejercicio 5</h1>
+        <form action="http://localhost/tecweb/practicas/p06/src/validar_edad.php" method="post">
+            <fieldset>
+                <legend>Ingresa tus datos</legend>
+                <ul>
+                    <li>Edad: <input type="number" name="edad"></li>
+                    <li>Sexo 
+                        <ul>
+                            <li><input type="radio" name="sexo" value="mujer">Femenino</li>
+                            <li><input type="radio" name="sexo" value="hombre">Masculino</li>
+                        </ul>
+                    </li>
+                </ul>
+            </fieldset><br>
+            <input type="submit" value="Validar">
+        </form>
+    </body>
+</html>
