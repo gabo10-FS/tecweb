@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 8</title>
+    <script src="validar_formulario_producto.js" defer></script>
+</head>
+<body>
+    <h1>Registro de productos en almacén</h1>
+
+    <form id="formularioProductos" action="http://localhost/tecweb/practicas/p08/set_producto_v2.php" method="post">
+
+    <h2>Producto</h2>
+    <fieldset>
+        <legend>Información propia del producto</legend>
+
+        <ul>
+            <li><label for="form-nombre">Nombre:</label> <input type="text" name="nombre" id="form-nombre"></li>
+            <li><label for="form-marca">Marca:</label> <input type="text" name="marca" id="form-marca"></li>
+            <li><label for="form-modelo">Modelo:</label> <input type="text" name="modelo" id="form-modelo"></li>
+            <li><label for="form-descripcion">Descripción</label><br><textarea name="descripcion" rows="4" cols="60" id="form-descripcion" placeholder="No más de 300 caracteres de longitud"></textarea></li>
+        </ul>
+    </fieldset>
+
+    <h2>Almacén</h2>
+
+    <fieldset>
+        <legend>Información del producto en tienda</legend>
+
+        <ul>
+            <li><label for="form-precio">Precio:</label> <input type="number" name="precio" id="form-precio" step="0.01"></li>
+            <li><label for="form-unidad">Unidades</label> <input type="number" name="unidad" id="form-unidad" min="0"></li>
+            <li><label for="form-img">Ruta de la imagen</label> <input type="text" name="img" id="form-img"></li>
+        </ul>
+    </fieldset>
+
+    <p>
+        <input type="submit" value="Guardar producto">
+        <input type="reset" value="Limpiar">
+    </p>
+
+    </form>
+</body>
+</html>
