@@ -203,28 +203,70 @@
 
     <h1>Ejemplo JS04 - pag. 5</h1>
     <!--
-    
+    <script type=“text/javascript”>
+    var x;
+    x=1;
+    while (x<=100) {
+        document.write(x);
+        document.write(‘<br>’);
+        x=x+1;
+    }
+    </script>
     -->
     <div id="ejemplo10"></div>
     <input type="button" id="clickMe10" value="Tócame" onclick="ejemplo10();">
 
     <h1>Ejemplo JS04 - pag. 6</h1>
     <!--
-    
+    <script type=“text/javascript”>
+    var x=1;
+    var suma=0;
+    var valor;
+    while (x<=5){
+        valor = prompt(‘Ingresa el valor:’, ‘’);
+        valor = parseInt(valor);
+        suma = suma+valor;
+        x = x+1;
+    }
+    document.write(“La suma de los valores es ”+suma+“<br>”);
+    </script>
     -->
     <div id="ejemplo11"></div>
     <input type="button" id="clickMe11" value="Tócame" onclick="ejemplo11();">
     
     <h1>Ejemplo JS04 - pag. 12</h1>
     <!--
-    
+    <script type = “text/javascript”>
+    var valor;
+    do{
+        valor = prompt(‘Ingresa un valor entre 0 y 999:’, ‘’);
+        valor = parseInt(valor);
+        document.write(‘El valor ’+valor+‘ tiene ’);
+        if (valor<10)
+            document.write(‘Tiene 1 dígitos’)
+        else
+            if (valor<100) {
+                document.write(‘Tiene 2 dígitos’);
+            }
+            else {
+                document.write(‘Tiene 3 dígitos’);
+            }
+        document write(‘<br>’);
+    }while(valor!=0);
+    </script>
     -->
     <div id="ejemplo12"></div>
     <input type="button" id="clickMe12" value="Tócame" onclick="ejemplo12();">
 
     <h1>Ejemplo JS04 - pag. 16</h1>
     <!--
-    
+    <script type=“text/javascript”>
+    var f;
+    for(f=1; f<=10; f++)
+    {
+        document.write(f+“ ”);
+    }
+    </script>
     -->
     <div id="ejemplo13"></div>
     <input type="button" id="clickMe13" value="Tócame" onclick="ejemplo13();">

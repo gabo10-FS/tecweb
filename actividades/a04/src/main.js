@@ -137,19 +137,61 @@ function ejemplo09(){
 }
 
 function ejemplo10(){
+    var x;
+    x = 1;
     var div = document.getElementById('ejemplo10');
+    var numeros = '';
+    while (x<=100) {
+        numeros = numeros + x + '<br>';
+        x = x + 1;
+    }
+    div.innerHTML = '<h3>' + numeros + '</h3>';
 }
 
 function ejemplo11(){
+    var x = 1;
+    var suma = 0;
+    var valor;
     var div = document.getElementById('ejemplo11');
+    while (x<=5){
+        valor = prompt('Ingresa el valor:', '');
+        valor = parseInt(valor);
+        suma = suma + valor;
+        x = x+1;
+    }
+    div.innerHTML = '<h3>La suma de los valores es ' + suma + '</h3>';
 }
 
 function ejemplo12(){
+    var valor;
     var div = document.getElementById('ejemplo12');
+    var datos = '';
+    do{
+        valor = prompt('Ingresa un valor entre 0 y 999:', '');
+        valor = parseInt(valor);
+        datos = datos + 'El valor ' + valor + ' tiene ';
+        if (valor<10)
+            datos = datos + '1 dígito<br>';
+        else
+            if (valor<100) {
+                datos = datos + '2 dígitos<br>';
+            }
+            else {
+                datos = datos + '3 dígitos<br>';
+            }
+        div.innerHTML = '<h3>' + datos + ' </h3>'
+    }while(valor!=0);
 }
 
 function ejemplo13(){
+    var f;
+    var datos = '';
     var div = document.getElementById('ejemplo13');
+    for(f=1; f<=10; f++)
+    {
+        datos = datos + f + ' ';
+    }
+    div.innerHTML = '<h3>' + datos + ' </h3>';
 }
 
 function ejemplo14(){
