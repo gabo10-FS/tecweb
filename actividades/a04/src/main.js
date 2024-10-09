@@ -34,27 +34,106 @@ function ejemplo03(){
 }
 
 function ejemplo04(){
+    var valor1;
+    var valor2;
+    valor1 = prompt('Introducir primer número:', '');
+    valor2 = prompt('Introducir segundo número', '');
+    var suma = parseInt(valor1)+parseInt(valor2);
+    var producto = parseInt(valor1)*parseInt(valor2);
     var div = document.getElementById('ejemplo04');
+    div.innerHTML = '<h3>La suma es ' + suma + '</h3>'
+    + '<h3>El producto es ' + producto + '</h3>';   
 }
 
 function ejemplo05(){
+    var nombre;
+    var nota;
+    nombre = prompt('Ingresa tu nombre:', '');
+    nota = prompt('Ingresa tu nota:', '');
     var div = document.getElementById('ejemplo05');
+    if (nota>=4) {
+        div.innerHTML = '<h3>' + nombre + ' está aprobado con un ' + nota + '</h3>';
+    }
 }
 
 function ejemplo06(){
+    var num1,num2;
+    num1 = prompt('Ingresa el primer número:', '');
+    num2 = prompt('Ingresa el segundo número:', '');
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
     var div = document.getElementById('ejemplo06');
+    if (num1>num2) {
+        div.innerHTML = '<h3>El mayor es ' + num1 + '</h3>';
+    }
+    else {
+        div.innerHTML = '<h3>El mayor es ' + num2 + '</h3>';
+    }
 }
 
 function ejemplo07(){
+    var nota1,nota2,nota3;
+    nota1 = prompt('Ingresa 1ra. nota:', '');
+    nota2 = prompt('Ingresa 2da. nota:', '');
+    nota3 = prompt('Ingresa 3ra. nota:', '');
+
+    //Convertimos los 3 string en enteros
+    nota1 = parseInt(nota1);
+    nota2 = parseInt(nota2);
+    nota3 = parseInt(nota3);
+    var pro;
+    pro = (nota1+nota2+nota3)/3;
     var div = document.getElementById('ejemplo07');
+    if (pro>=7) {
+        div.innerHTML = '<h3>Aprobado</h3>';
+    }
+    else {
+        if (pro>=4) {
+            div.innerHTML = '<h3>Regular</h3>';
+        }
+        else {
+            div.innerHTML = '<h3>Reprobado</h3>';
+        }
+    }
 }
 
 function ejemplo08(){
+    var valor;
+    valor = prompt('Ingresar un valor comprendido entre 1 y 5:', '' );
+    //Convertimos a entero
+    valor = parseInt(valor);
     var div = document.getElementById('ejemplo08');
+    switch (valor) {
+        case 1: div.innerHTML = '<h3>Uno</h3>';
+        break;
+        case 2: div.innerHTML = '<h3>Dos</h3>';
+        break;
+        case 3: div.innerHTML = '<h3>Tres</h3>';
+        break;
+        case 4: div.innerHTML = '<h3>Cuatro</h3>';
+        break;
+        case 5: div.innerHTML = '<h3>Cinco</h3>';
+        break;
+        default: div.innerHTML = '<h3>Debe ingresar un valor comprendido entre 1 y 5.</h3>';
+    }
 }
 
 function ejemplo09(){
+    var col;
+    col = prompt('Ingresa el color con que quierar pintar el fondo de la ventana (rojo, verde, azul)' , '' );
     var div = document.getElementById('ejemplo09');
+    div.style.width = '200px'; 
+    div.style.height = '200px';
+    div.style.border = '2px solid black';
+    div.style.marginBottom = '20px';
+    switch (col) {
+        case 'rojo': div.style.backgroundColor = '#ff0000';
+        break;
+        case 'verde': div.style.backgroundColor = '#00ff00';
+        break;
+        case 'azul': div.style.backgroundColor = '#0000ff';
+        break;
+    }
 }
 
 function ejemplo10(){
