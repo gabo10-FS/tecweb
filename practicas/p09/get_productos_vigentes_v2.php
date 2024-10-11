@@ -63,9 +63,9 @@
                 var desc = data[5].innerHTML;
 				var precio = data[3].innerHTML;
 				var unid = data[4].innerHTML;
-                var img = data[6].getAttribute('data-img');;
+                var img = data[6].getAttribute('data-img');
 
-                send2form(name, marca, modelo, desc, precio, unid, img);
+                send2form(name, marca, modelo, desc, precio, unid, img, rowId);
             }
         </script>
 	</head>
@@ -113,8 +113,14 @@
 
 		<?php endif; ?>
 		<script>
-            function send2form(name, marca, modelo, desc, precio, unid, img) {
+            function send2form(name, marca, modelo, desc, precio, unid, img, rowId) {
                 var form = document.createElement("form");
+
+				var idIn = document.createElement("input");
+				idIn.type = 'hidden';
+				idIn.name = 'id';
+				idIn.value = rowId;
+				form.appendChild(idIn);
 
                 var nombreIn = document.createElement("input");
                 nombreIn.type = 'text';

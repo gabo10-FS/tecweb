@@ -10,8 +10,8 @@
 <body>
     <h1>Actualización de productos en almacén</h1>
 
-    <form id="formularioProductos" onsubmit="" method="post">
-
+    <form id="formularioProductos" action="http://localhost/tecweb/practicas/p09/update_producto.php" method="post">
+    <input type="hidden" name="id" value="<?= !empty($_POST['id']) ? $_POST['id'] : '' ?>">
     <h2>Producto</h2>
     <fieldset>
         <legend>Información propia del producto</legend>
@@ -23,16 +23,16 @@
                     <option value="0"></option>
                     <option value="APPLE" <?= isset($_POST['marca']) && $_POST['marca'] === 'APPLE' ? 'selected' : '' ?>>APPLE</option>
                     <option value="HUAWEI" <?= isset($_POST['marca']) && $_POST['marca'] === 'HUAWEI' ? 'selected' : '' ?>>HUAWEI</option>
-                        <option value="LG" <?= isset($_POST['marca']) && $_POST['marca'] === 'LG' ? 'selected' : '' ?>>LG</option>
-                        <option value="MSI" <?= isset($_POST['marca']) && $_POST['marca'] === 'MSI' ? 'selected' : '' ?>>MSI</option>
-                        <option value="DELL" <?= isset($_POST['marca']) && $_POST['marca'] === 'DELL' ? 'selected' : '' ?>>DELL</option>
-                        <option value="SAMSUNG" <?= isset($_POST['marca']) && $_POST['marca'] === 'SAMSUNG' ? 'selected' : '' ?>>SAMSUNG</option>
-                        <option value="LENOVO" <?= isset($_POST['marca']) && $_POST['marca'] === 'LENOVO' ? 'selected' : '' ?>>LENOVO</option>
-                        <option value="ASUS" <?= isset($_POST['marca']) && $_POST['marca'] === 'ASUS' ? 'selected' : '' ?>>ASUS</option>
-                        <option value="HP" <?= isset($_POST['marca']) && $_POST['marca'] === 'HP' ? 'selected' : '' ?>>HP</option>
-                        <option value="ACER" <?= isset($_POST['marca']) && $_POST['marca'] === 'ACER' ? 'selected' : '' ?>>ACER</option>
-                        <option value="SONY" <?= isset($_POST['marca']) && $_POST['marca'] === 'SONY' ? 'selected' : '' ?>>SONY</option>
-                        <option value="TOSHIBA" <?= isset($_POST['marca']) && $_POST['marca'] === 'TOSHIBA' ? 'selected' : '' ?>>TOSHIBA</option>
+                    <option value="LG" <?= isset($_POST['marca']) && $_POST['marca'] === 'LG' ? 'selected' : '' ?>>LG</option>
+                    <option value="MSI" <?= isset($_POST['marca']) && $_POST['marca'] === 'MSI' ? 'selected' : '' ?>>MSI</option>
+                    <option value="DELL" <?= isset($_POST['marca']) && $_POST['marca'] === 'DELL' ? 'selected' : '' ?>>DELL</option>
+                    <option value="SAMSUNG" <?= isset($_POST['marca']) && $_POST['marca'] === 'SAMSUNG' ? 'selected' : '' ?>>SAMSUNG</option>
+                    <option value="LENOVO" <?= isset($_POST['marca']) && $_POST['marca'] === 'LENOVO' ? 'selected' : '' ?>>LENOVO</option>
+                    <option value="ASUS" <?= isset($_POST['marca']) && $_POST['marca'] === 'ASUS' ? 'selected' : '' ?>>ASUS</option>
+                    <option value="HP" <?= isset($_POST['marca']) && $_POST['marca'] === 'HP' ? 'selected' : '' ?>>HP</option>
+                    <option value="ACER" <?= isset($_POST['marca']) && $_POST['marca'] === 'ACER' ? 'selected' : '' ?>>ACER</option>
+                    <option value="SONY" <?= isset($_POST['marca']) && $_POST['marca'] === 'SONY' ? 'selected' : '' ?>>SONY</option>
+                    <option value="TOSHIBA" <?= isset($_POST['marca']) && $_POST['marca'] === 'TOSHIBA' ? 'selected' : '' ?>>TOSHIBA</option>
                 </select>
             </p>
             <li><label for="form-modelo">Modelo:</label> <input type="text" name="modelo" id="form-modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>"></li>
