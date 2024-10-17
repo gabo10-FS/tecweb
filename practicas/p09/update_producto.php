@@ -17,19 +17,14 @@
     $sql = "UPDATE productos SET nombre = '$nombre', marca = '$marca', modelo = '$modelo', detalles = '$detalles', precio = '$precio', unidades = '$unidades', imagen = '$imagen'  WHERE id='$id'";
     if(mysqli_query($link, $sql)){
     echo "<h1>Registro actualizado.</h1>";
-    echo '<h2>Ver productos</h2>
-            <ul>
-                <li><a href="http://localhost/tecweb/practicas/p09/get_productos_xhtml_v2.php" target="_blank">Ver productos por tope</a></li>
-                <li><a href="http://localhost/tecweb/practicas/p09/get_productos_vigentes_v2.php" target="_blank">Ver productos vigentes</a></li>
-            </ul>';
     } else {
     echo "ERROR: No se ejecuto $sql. " . mysqli_error($link);
+    }
     echo '<h2>Ver productos</h2>
             <ul>
                 <li><a href="http://localhost/tecweb/practicas/p09/get_productos_xhtml_v2.php" target="_blank">Ver productos por tope</a></li>
                 <li><a href="http://localhost/tecweb/practicas/p09/get_productos_vigentes_v2.php" target="_blank">Ver productos vigentes</a></li>
             </ul>';
-    }
     // Cierra la conexion
     mysqli_close($link);
 ?>

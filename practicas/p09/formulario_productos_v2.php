@@ -17,7 +17,7 @@
         <legend>Información propia del producto</legend>
 
         <ul>
-            <li><label for="form-nombre">Nombre:</label> <input type="text" name="nombre" id="form-nombre" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>"></li>
+            <li><label for="form-nombre">Nombre:</label> <input type="text" name="nombre" id="form-nombre" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:'' ?>"></li>
             <p>Marca: 
                 <select name="marca" id="form-marca">
                     <option value="0"></option>
@@ -35,7 +35,7 @@
                     <option value="TOSHIBA" <?= isset($_POST['marca']) && $_POST['marca'] === 'TOSHIBA' ? 'selected' : '' ?>>TOSHIBA</option>
                 </select>
             </p>
-            <li><label for="form-modelo">Modelo:</label> <input type="text" name="modelo" id="form-modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>"></li>
+            <li><label for="form-modelo">Modelo:</label> <input type="text" name="modelo" id="form-modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:'' ?>"></li>
             <li><label for="form-descripcion">Descripción</label><br><textarea name="descripcion" rows="4" cols="60" id="form-descripcion" placeholder="No más de 300 caracteres de longitud"><?= !empty($_POST['descripcion'])?$_POST['descripcion']:$_GET['descripcion'] ?></textarea></li>
         </ul>
     </fieldset>
@@ -46,9 +46,9 @@
         <legend>Información del producto en tienda</legend>
 
         <ul>
-            <li><label for="form-precio">Precio:</label> <input type="number" name="precio" id="form-precio" step="0.01" value="<?= !empty($_POST['precio'])?$_POST['precio']:$_GET['precio'] ?>"></li>
-            <li><label for="form-unidad">Unidades</label> <input type="number" name="unidad" id="form-unidad" value="<?= !empty($_POST['unidad'])?$_POST['unidad']:$_GET['unidad'] ?>"></li>
-            <li><label for="form-img">Ruta de la imagen</label> <input type="text" name="img" id="form-img" value="<?= !empty($_POST['img'])?$_POST['img']:$_GET['img'] ?>"></li>
+            <li><label for="form-precio">Precio:</label> <input type="number" name="precio" id="form-precio" step="0.01" value="<?= !empty($_POST['precio'])?$_POST['precio']:'' ?>"></li>
+            <li><label for="form-unidad">Unidades</label> <input type="number" name="unidad" id="form-unidad" value="<?= !empty($_POST['unidad'])?$_POST['unidad']:'' ?>"></li>
+            <li><label for="form-img">Ruta de la imagen</label> <input type="text" name="img" id="form-img" value="<?= !empty($_POST['img'])?$_POST['img']:'' ?>"></li>
         </ul>
     </fieldset>
 
