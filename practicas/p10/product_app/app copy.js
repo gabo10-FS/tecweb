@@ -76,7 +76,7 @@ function buscarProducto(e){
             let productos = JSON.parse(client.responseText);    // similar a eval('('+client.responseText+')');
             
             // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
-            if(Object.keys(productos).length > 0) {
+            if(Array.isArray(productos) && productos.length > 0) {
                 // SE CREA UNA PLANTILLA PARA CREAR LA(S) FILA(S) A INSERTAR EN EL DOCUMENTO HTML
                 let template = '';
                 // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
