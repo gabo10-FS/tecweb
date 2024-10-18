@@ -21,8 +21,27 @@
       <div>
         <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
         <form id="task-form">
-          <div>
+          <div style="padding-top: 10px;">
             <input type="text" id="name" placeholder="Nombre de producto">
+          </div>
+          <div>
+            <p>Marca: 
+              <select name="marca" id="brand">
+                  <option value="0"></option>
+                  <option value="APPLE">APPLE</option>
+                  <option value="HUAWEI">HUAWEI</option>
+                  <option value="LG">LG</option>
+                  <option value="MSI">MSI</option>
+                  <option value="DELL">DELL</option>
+                  <option value="SAMSUNG">SAMSUNG</option>
+                  <option value="LENOVO">LENOVO</option>
+                  <option value="ASUS">ASUS</option>
+                  <option value="HP">HP</option>
+                  <option value="ACER">ACER</option>
+                  <option value="SONY">SONY</option>
+                  <option value="TOSHIBA">TOSHIBA</option>
+              </select>
+          </p>
           </div>
           <div>
             <textarea id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>

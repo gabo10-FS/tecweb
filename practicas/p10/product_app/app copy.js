@@ -1,11 +1,10 @@
 // JSON BASE A MOSTRAR EN FORMULARIO
 var baseJSON = {
-    "precio": 0.0,
+    "precio": 99.99,
     "unidades": 1,
     "modelo": "XX-000",
-    "marca": "NA",
     "detalles": "NA",
-    "imagen": "img/default.png"
+    "imagen": "img/imagen.png"
   };
 
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
@@ -114,10 +113,25 @@ function agregarProducto(e) {
     var productoJsonString = document.getElementById('description').value;
     // SE CONVIERTE EL JSON DE STRING A OBJETO
     var finalJSON = JSON.parse(productoJsonString);
+
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
+
+    //SE AGREGA AL JSON LA MARCA DEL PRODUCTO
+    finalJSON['marca'] = document.getElementById('brand').value;
+
+    // Llamada a la función de validación
+    var errores = validarProducto(finalJSON);
+
+    // Mostrar errores
+    if (errores.length > 0) {
+        alert(errores.join('\n'));
+        return; // Detener el envío del formulario si hay errores
+    }
+    
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
+    console.log(JSON.stringify(finalJSON, null, 2));
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -127,6 +141,7 @@ function agregarProducto(e) {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
             console.log(client.responseText);
+            alert(client.responseText);
         }
     };
     client.send(productoJsonString);
@@ -165,6 +180,54 @@ function init() {
      */
     var JsonString = JSON.stringify(baseJSON,null,2);
     document.getElementById("description").value = JsonString;
+}
+
+function validarProducto(producto) {
+    const errores = [];
+
+    // Validación del nombre
+    if (!producto.nombre) {
+        errores.push('El nombre es requerido.');
+    } else if (producto.nombre.length > 100) {
+        errores.push('El nombre no debe exceder los 100 caracteres.');
+    }
+
+    // Validación de la marca
+    if (producto.marca === "0") {
+        errores.push('La marca es requerida.');
+    }
+
+    // Validación del modelo
+    const alfanumerico = /^[a-zA-Z0-9-]+$/; // permite guiones
+    if (!producto.modelo) {
+        errores.push('El modelo es requerido.');
+    } else if (!alfanumerico.test(producto.modelo)) {
+        errores.push('El modelo debe ser alfanumérico.');
+    } else if (producto.modelo.length > 25) {
+        errores.push('El modelo no debe exceder los 25 caracteres.');
+    }
+
+    // Validación del precio
+    if (isNaN(producto.precio) || producto.precio <= 99.99) {
+        errores.push('El precio es requerido y debe ser mayor a 99.99.');
+    }
+
+    // Validación de los detalles (opcional)
+    if (producto.detalles && producto.detalles.length > 250) {
+        errores.push('Los detalles no deben tener más de 250 caracteres.');
+    }
+
+    // Validación de las unidades
+    if (isNaN(producto.unidades) || producto.unidades < 0) {
+        errores.push('Las unidades son requeridas y deben ser mayores o iguales a 0.');
+    }
+
+    // Validación de la ruta de la imagen (opcional)
+    if (!producto.imagen) {
+        producto.imagen = 'img/imagen.png'; // Establecer imagen por defecto si no se proporciona
+    }
+
+    return errores;
 }
 
 
