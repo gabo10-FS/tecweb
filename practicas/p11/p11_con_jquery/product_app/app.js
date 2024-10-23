@@ -25,6 +25,14 @@ $(document).ready(function(){
     $('#product-result').hide();
     listarProductos();
     let edit = false;
+    botonAddEdit();
+    function botonAddEdit(){
+        if(edit){
+            $('#add-edit').text('Editar producto');
+        }else{
+            $('#add-edit').text('Agregar producto');
+        }
+    }
 
     $('#search').keyup(function(e){
         if($('#search').val()){
@@ -53,7 +61,9 @@ $(document).ready(function(){
                         template += `
                             <tr productId="${producto.id}">
                                 <td>${producto.id}</td>
-                                <td>${producto.nombre}</td>
+                                <td>
+                                    <a href="#" class="product-item">${producto.nombre}</a>
+                                </td>
                                 <td><ul>${descripcion}</ul></td>
                                 <td>
                                     <button class="product-delete btn btn-danger" onclick="eliminarProducto()">
@@ -103,6 +113,8 @@ $(document).ready(function(){
                 listarProductos();
                 $('#product-form').trigger('reset');
                 init();
+                edit = false;
+                botonAddEdit();
             }
             // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
             let template_bar = '';
@@ -200,6 +212,7 @@ $(document).ready(function(){
             let JSONProduct = JSON.stringify(product,null,2);
             $('#description').val(JSONProduct);
             edit = true;
+            botonAddEdit();
         });
     });
 });
