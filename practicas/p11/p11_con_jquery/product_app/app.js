@@ -14,7 +14,8 @@ function init() {
      * ver: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON
      */
     var JsonString = JSON.stringify(baseJSON,null,2);
-    document.getElementById("description").value = JsonString;
+    //document.getElementById("description").value = JsonString;
+    $('#description').val(JsonString);
 
     // SE LISTAN TODOS LOS PRODUCTOS
     //listarProductos();
@@ -79,6 +80,8 @@ $(document).ready(function(){
     });
 
     $('#product-form').submit(function(e){
+        e.preventDefault();
+
         var productoJsonString = $('#description').val();
         var finalJSON = JSON.parse(productoJsonString);
         finalJSON['nombre'] = $('#name').val();
@@ -95,9 +98,12 @@ $(document).ready(function(){
         //console.log(productoJsonString);
         let url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
         $.post(url, productoJsonString, function(response) {
-            listarProductos();
-            $('#product-form').trigger('resert');
             let respuesta = JSON.parse(response);
+            if(respuesta.status === 'success'){
+                listarProductos();
+                $('#product-form').trigger('reset');
+                init();
+            }
             // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
             let template_bar = '';
             template_bar += `
@@ -109,7 +115,6 @@ $(document).ready(function(){
             // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
             $('#container').html(template_bar);
         });
-        e.preventDefault();
     });
 
     function listarProductos(){
