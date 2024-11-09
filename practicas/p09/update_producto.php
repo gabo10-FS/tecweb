@@ -22,8 +22,8 @@
     }
     echo '<h2>Ver productos</h2>
             <ul>
-                <li><a href="http://localhost/tecweb/practicas/p09/get_productos_xhtml_v2.php" target="_blank">Ver productos por tope</a></li>
-                <li><a href="http://localhost/tecweb/practicas/p09/get_productos_vigentes_v2.php" target="_blank">Ver productos vigentes</a></li>
+                <li><a href="http://penguin.linux.test/tecweb/practicas/p09/get_productos_xhtml_v2.php" target="_blank">Ver productos por tope</a></li>
+                <li><a href="http://penguin.linux.test/tecweb/practicas/p09/get_productos_vigentes_v2.php" target="_blank">Ver productos vigentes</a></li>
             </ul>';
     // Cierra la conexion
     mysqli_close($link);

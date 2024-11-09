@@ -10,7 +10,7 @@
 <body>
     <h1>Actualización de productos en almacén</h1>
 
-    <form id="formularioProductos" action="http://localhost/tecweb/practicas/p09/update_producto.php" method="post">
+    <form id="formularioProductos" action="http://penguin.linux.test/tecweb/practicas/p09/update_producto.php" method="post">
     <input type="hidden" name="id" value="<?= !empty($_POST['id']) ? $_POST['id'] : '' ?>">
     <h2>Producto</h2>
     <fieldset>

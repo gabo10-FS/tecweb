@@ -173,7 +173,7 @@
                 form.appendChild(imgIn);	
 
                 form.method = 'POST';
-                form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.php';  
+                form.action = 'http://penguin.linux.test/tecweb/practicas/p09/formulario_productos_v2.php';  
 
                 document.body.appendChild(form);
                 form.submit();
