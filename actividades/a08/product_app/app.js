@@ -211,13 +211,7 @@ $(document).ready(function(){
         });
     });
 
-    $('#name').focus(function(){
-        validarNombre();
-    });
-    $('#name').keyup(function(){
-        validarNombre();
-    });
-    function validarNombre(){
+    $('#name').on('focus keyup',function(){
         let element = $('#name').val().trim();
         $('#product-result').show();
         if(!element){
@@ -227,10 +221,31 @@ $(document).ready(function(){
             $('#container').html('El nombre no más de 100');
             $('#name').css('border', '2px solid orange');
             }else{
-                $('#container').html('El campo es válido');
-                $('#name').css('border', '2px solid green');
+                $.ajax({
+                    url: 'backend/product-singleByName.php',
+                    type: 'GET',
+                    //data: {element: element} es lo mismo que
+                    data: { element },
+                    success: function(response){
+                        let respuesta = JSON.parse(response);
+                        // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
+                        let template_bar = '';
+                        template_bar += `
+                                    <li style="list-style: none;">status: ${respuesta.status}</li>
+                                    <li style="list-style: none;">message: ${respuesta.message}</li>
+                                `;
+                        // SE HACE VISIBLE LA BARRA DE ESTADO
+                        if(respuesta.status === 'error'){
+                            $('#name').css('border', '2px solid orange');
+                        }else{
+                            $('#name').css('border', '2px solid green');
+                        }
+                        $('#container').html(template_bar);
+                        console.log(template_bar);
+                    }
+                });
             }
-    }
+    });
     $('#form-marca').on('click',function(){
         validarMarca();
     });
@@ -245,10 +260,7 @@ $(document).ready(function(){
             $('#form-marca').css('border', '2px solid green');
             }
     }
-    $('#form-modelo').focus(function(){
-        validarModelo();
-    });
-    $('#form-modelo').keyup(function(){
+    $('#form-modelo').on('focus keyup',function(){
         validarModelo();
     });
     function validarModelo(){
@@ -266,10 +278,7 @@ $(document).ready(function(){
                 $('#form-modelo').css('border', '2px solid green');
             }
     }
-    $('#form-descripcion').focus(function(){
-        validarDetalles();
-    });
-    $('#form-descripcion').keyup(function(){
+    $('#form-descripcion').on('focus keyup',function(){
         validarDetalles();
     });
     function validarDetalles(){
@@ -283,10 +292,7 @@ $(document).ready(function(){
                 $('#form-descripcion').css('border', '2px solid green');
             }
     }
-    $('#form-precio').focus(function(){
-        validarPrecio();
-    });
-    $('#form-precio').keyup(function(){
+    $('#form-precio').on('focus keyup',function(){
         validarPrecio();
     });
     function validarPrecio(){
@@ -303,10 +309,7 @@ $(document).ready(function(){
                 $('#form-precio').css('border', '2px solid green');
             }
     }
-    $('#form-unidad').focus(function(){
-        validarUnidad();
-    });
-    $('#form-unidad').keyup(function(){
+    $('#form-unidad').on('focus keyup',function(){
         validarUnidad();
     });
     function validarUnidad(){
@@ -326,10 +329,7 @@ $(document).ready(function(){
                     $('#form-unidad').css('border', '2px solid green');
                 }
     }
-    $('#form-img').focus(function(){
-        validarImg();
-    });
-    $('#form-img').keyup(function(){
+    $('#form-img').on('focus keyup',function(){
         validarImg();
     });
     function validarImg(){

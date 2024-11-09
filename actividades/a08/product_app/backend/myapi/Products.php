@@ -185,33 +185,23 @@
         }
 
         public function singleByName($name){
-            // SE VERIFICA HABER RECIBIDO EL ID
-            if( isset($name) ) {
-                // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-                $sql = "SELECT * FROM productos WHERE nombre = '{$name}' AND eliminado = 0";
-                $result = mysqli_query($this->conexion, $sql);
-                if ( $this->conexion->query($sql) ) {
-                    $json = array();
-                    while($row = mysqli_fetch_array($result)){
-                        $json[] = array(
-                            'id' => $row['id'],
-                            'nombre' => $row['nombre'],
-                            'precio' => $row['precio'],
-                            'unidades' => $row['unidades'],
-                            'modelo' => $row['modelo'],
-                            'marca' => $row['marca'],
-                            'detalles' => $row['detalles'],
-                            'imagen' => $row['imagen']
-                        );
-                    }
-                } else {
-                    die('Query fallida');
+            $data = array();
+            if(isset($name) && !empty($name)) {
+                error_log("Valor de name: " . $name);
+                // SE ASUME QUE LOS DATOS YA FUERON VALIDADOS ANTES DE ENVIARSE
+                $sql = "SELECT * FROM productos WHERE nombre LIKE '%{$name}%' AND eliminado = 0";
+                $result = $this->conexion->query($sql);
+                if($result->num_rows > 0){
+                    $data['status'] =  "error";
+                    $data['message'] =  "Ya existe un producto con ese nombre";
+                }else{
+                    $data['status'] =  "success";
+                    $data['message'] =  "Nombre de producto aceptado";
                 }
+                // Cierra la conexion
                 $this->conexion->close();
-            } 
-            
-            // SE HACE LA CONVERSIÓN DE ARRAY A JSON
-            $this->data = $json[0];
+            }
+            $this->data = $data;
         }
 
         public function getData(){
