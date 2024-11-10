@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('#product-result').hide();
+    $('#product-status').hide();
     listarProductos();
     let edit = false;
     botonAddEdit();
@@ -8,6 +9,15 @@ $(document).ready(function(){
             $('#add-edit').text('Editar producto');
         }else{
             $('#add-edit').text('Agregar producto');
+        }
+    }
+    function showDiv(div){
+        if(div === 'result'){
+            $('#product-result').show();
+            $('#product-status').hide();
+        }else{
+            $('#product-result').hide();
+            $('#product-status').show();
         }
     }
 
@@ -56,7 +66,7 @@ $(document).ready(function(){
                     });
                     // SE HACE VISIBLE LA BARRA DE ESTADO
                     //$('#product-result').addClass('card my-4 d-block');
-                    $('#product-result').show();
+                    showDiv('result');
                     // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
                     $('#container').html(template_bar);
                     // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
@@ -85,7 +95,9 @@ $(document).ready(function(){
 
         // Mostrar errores
         if (errores.length > 0) {
-            alert(errores.join('\n'));
+            showDiv('status');
+            $('#status').html(errores.join('<br>'));
+            //alert(errores.join('\n'));
             return; // Detener el envío del formulario si hay errores
         }
         productoJsonString = JSON.stringify(finalJSON,null,2);
@@ -96,7 +108,6 @@ $(document).ready(function(){
             if(respuesta.status === 'success'){
                 listarProductos();
                 $('#product-form').trigger('reset');
-                init();
                 edit = false;
                 botonAddEdit();
             }
@@ -107,7 +118,7 @@ $(document).ready(function(){
                         <li style="list-style: none;">message: ${respuesta.message}</li>
                     `;
             // SE HACE VISIBLE LA BARRA DE ESTADO
-            $('#product-result').show();
+            showDiv('result');
             // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
             $('#container').html(template_bar);
         });
@@ -172,7 +183,7 @@ $(document).ready(function(){
                             `;
 
                     // SE HACE VISIBLE LA BARRA DE ESTADO
-                    $('#product-result').show();
+                    showDiv('result');
                     // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
                     $('#container').html(template_bar);
                     // SE LISTAN TODOS LOS PRODUCTOS
@@ -213,12 +224,12 @@ $(document).ready(function(){
 
     $('#name').on('focus keyup',function(){
         let element = $('#name').val().trim();
-        $('#product-result').show();
+        showDiv('status');
         if(!element){
-            $('#container').html('El nombre es requerido');
+            $('#status').html('El nombre es requerido');
             $('#name').css('border', '2px solid red');
         }else if(element.length>100){
-            $('#container').html('El nombre no más de 100');
+            $('#status').html('El nombre no debe exceder los 100 caracteres');
             $('#name').css('border', '2px solid orange');
             }else{
                 $.ajax({
@@ -234,13 +245,13 @@ $(document).ready(function(){
                                     <li style="list-style: none;">status: ${respuesta.status}</li>
                                     <li style="list-style: none;">message: ${respuesta.message}</li>
                                 `;
-                        // SE HACE VISIBLE LA BARRA DE ESTADO
+                        //Se muestra el mensaje en la barra de estado
                         if(respuesta.status === 'error'){
                             $('#name').css('border', '2px solid orange');
                         }else{
                             $('#name').css('border', '2px solid green');
                         }
-                        $('#container').html(template_bar);
+                        $('#status').html(template_bar);
                         console.log(template_bar);
                     }
                 });
@@ -251,12 +262,12 @@ $(document).ready(function(){
     });
     function validarMarca(){
         let element = $('#form-marca').val();
-        $('#product-result').show();
+        showDiv('status');
         if(element === '0'){
-            $('#container').html('La marca es requerida');
+            $('#status').html('La marca es requerida');
             $('#form-marca').css('border', '2px solid red');
         }else{
-            $('#container').html('La opción es válida');
+            $('#status').html('La opción es válida');
             $('#form-marca').css('border', '2px solid green');
             }
     }
@@ -266,29 +277,32 @@ $(document).ready(function(){
     function validarModelo(){
         let element = $('#form-modelo').val().trim();
         const alfanumerico = /^[a-zA-Z0-9-]+$/;
-        $('#product-result').show();
+        showDiv('status');
         if(!element){
-            $('#container').html('El modelo es requerido');
+            $('#status').html('El modelo es requerido');
             $('#form-modelo').css('border', '2px solid red');
         }else if(!alfanumerico.test(element)){
-            $('#container').html('Solo caracteres alfanumericos');
+            $('#status').html('Solo caracteres alfanumericos');
             $('#form-modelo').css('border', '2px solid orange');
-            }else{
-                $('#container').html('El campo es válido');
-                $('#form-modelo').css('border', '2px solid green');
-            }
+            }else if(element.length>25){
+                $('#status').html('El modelo no debe exceder los 25 caracteres');
+                $('#name').css('border', '2px solid orange');
+                }else{
+                    $('#status').html('El campo es válido');
+                    $('#form-modelo').css('border', '2px solid green');
+                }
     }
     $('#form-descripcion').on('focus keyup',function(){
         validarDetalles();
     });
     function validarDetalles(){
         let element = $('#form-descripcion').val().trim();
-        $('#product-result').show();
-        if(element.length>300){
-            $('#container').html('El nombre no más de 300');
+        showDiv('status');
+        if(element.length>250){
+            $('#status').html('La descripción no debe exceder los 250 caracteres');
             $('#form-descripcion').css('border', '2px solid orange');
             }else{
-                $('#container').html('El campo es válido');
+                $('#status').html('El campo es válido');
                 $('#form-descripcion').css('border', '2px solid green');
             }
     }
@@ -297,15 +311,15 @@ $(document).ready(function(){
     });
     function validarPrecio(){
         let element = parseFloat($('#form-precio').val().trim());
-        $('#product-result').show();
+        showDiv('status');
         if(isNaN(element)){
-            $('#container').html('El precio es requerido');
+            $('#status').html('El precio es requerido');
             $('#form-precio').css('border', '2px solid red');
         }else if(element<=99.99){
-            $('#container').html('El debe ser mayor a 99.99');
+            $('#status').html('El precio debe ser mayor a 99.99');
             $('#form-precio').css('border', '2px solid orange');
             }else{
-                $('#container').html('El campo es válido');
+                $('#status').html('El campo es válido');
                 $('#form-precio').css('border', '2px solid green');
             }
     }
@@ -314,18 +328,18 @@ $(document).ready(function(){
     });
     function validarUnidad(){
         let element = $('#form-unidad').val();
-        $('#product-result').show();
+        showDiv('status');
         if(!element){
-            $('#container').html('Las unidades son requeridas');
+            $('#status').html('Las unidades son requeridas');
             $('#form-unidad').css('border', '2px solid red');
         }else if(parseInt(element)<0){
-            $('#container').html('Las unidades deben ser positivas');
+            $('#status').html('Las unidades no pueden ser negativas');
             $('#form-unidad').css('border', '2px solid orange');
             }else if(element%1 !== 0){
-                $('#container').html('Ingresa un número entero');
+                $('#status').html('Ingresa un número entero');
                 $('#form-unidad').css('border', '2px solid orange');
                 }else{
-                    $('#container').html('El campo es válido');
+                    $('#status').html('El campo es válido');
                     $('#form-unidad').css('border', '2px solid green');
                 }
     }
@@ -334,9 +348,9 @@ $(document).ready(function(){
     });
     function validarImg(){
         let element = $('#form-img').val().trim();
-        $('#product-result').show();
-        $('#container').html('Sin restricciones');
-        $('#form-img').css('border', '2px solid green');
+        showDiv('status');
+        $('#status').html('Sin restricciones<br>Se cuenta con una ruta por defecto si se deja en blanco');
+        $('#form-img').css('border', '2px solid blue');
             
     }
     
