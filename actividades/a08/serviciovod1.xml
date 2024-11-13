@@ -1,0 +1,97 @@
+<catalogovod>
+    <cuenta>
+        <correo>ausaldivar568@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>gabito34s</usuario>
+                <idioma>Inglés</idioma>
+            </perfil>
+            <perfil>
+                <usuario>sergio10f</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>El padrino</nombre>
+                    <duracion>2h 55m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Interestelar</nombre>
+                    <duracion>2h 49m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La vida es bella</nombre>
+                    <duracion>1h 56m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>En busca del destino</nombre>
+                    <duracion>2h 6m</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>No se aceptan devoluciones</nombre>
+                    <duracion>2h 2m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Una película de miedo</nombre>
+                    <duracion>1h 28m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Juego de gemelas</nombre>
+                    <duracion>2h 8m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Shrek</nombre>
+                    <duracion>1h 29m</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Informativo</nombre>
+                <titulo>
+                    <nombre>Milenio Noticias</nombre>
+                    <duracion>1h</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Nadie sabía nada</nombre>
+                    <duracion>2h</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Aristegui Noticias</nombre>
+                    <duracion>1h 30m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Caso cerrado</nombre>
+                    <duracion>1h</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Musical</nombre>
+                <titulo>
+                    <nombre>La voz México</nombre>
+                    <duracion>3h</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La casa del señor</nombre>
+                    <duracion>2h</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Chente</nombre> 
+                    <duracion>1h 30m</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Entrelíneas</nombre>
+                    <duracion>1h</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
