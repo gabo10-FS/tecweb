@@ -1,0 +1,70 @@
+<catalogovod>
+    <cuenta correo="ausaldivar568@gmail.com">
+        <perfiles>
+            <perfil usuario=gabito34s idioma="Inglés"/>
+            <perfil usuario="sergio10f" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo duracion="2h 55m">
+                    <nombre>El padrino</nombre>
+                </titulo>
+                <titulo duracion="2h 49m">
+                    <nombre>Interestelar</nombre>
+                </titulo>
+                <titulo duracion="1h 56m">
+                    <nombre>La vida es bella</nombre>
+                </titulo>
+                <titulo duracion="2h 6m">
+                    <nombre>En busca del destino</nombre>
+                </titulo>
+            </genero>
+            <genero nombre="Comedia">
+                <titulo duracion="2h 2m">
+                    <nombre>No se aceptan devoluciones</nombre>
+                </titulo>
+                <titulo duracion="1h 28m">
+                    <nombre>Una película de miedo</nombre>
+                </titulo>
+                <titulo duracion="2h 8m">
+                    <nombre>Juego de gemelas</nombre>
+                </titulo>
+                <titulo duracion="1h 29m">
+                    <nombre>Shrek</nombre>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Informativo">
+                <titulo duracion="1h">
+                    <nombre>Milenio Noticias</nombre>
+                </titulo>
+                <titulo duracion="2h">
+                    <nombre>Nadie sabía nada</nombre>
+                </titulo>
+                <titulo duracion="1h 30m">
+                    <nombre>Aristegui Noticias</nombre>
+                </titulo>
+                <titulo duracion="1h">
+                    <nombre>Caso cerrado</nombre>
+                </titulo>
+            </genero>
+            <genero nombre="Musical">
+                <titulo duracion="3h">
+                    <nombre>La voz México</nombre>
+                </titulo>
+                <titulo duracion="2h">
+                    <nombre>La casa del señor</nombre>
+                </titulo>
+                <titulo duracion="1h 30m">
+                    <nombre>Chente</nombre> 
+                </titulo>
+                <titulo duracion="1h">
+                    <nombre>Entrelíneas</nombre>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
