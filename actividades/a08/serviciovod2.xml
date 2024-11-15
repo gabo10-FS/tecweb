@@ -1,69 +1,37 @@
 <catalogovod>
     <cuenta correo="ausaldivar568@gmail.com">
         <perfiles>
-            <perfil usuario=gabito34s idioma="Inglés"/>
+            <perfil usuario="gabito34s" idioma="Inglés"/>
             <perfil usuario="sergio10f" idioma="Español"/>
         </perfiles>
     </cuenta>
     <contenido>
         <peliculas>
             <genero nombre="Drama">
-                <titulo duracion="2h 55m">
-                    <nombre>El padrino</nombre>
-                </titulo>
-                <titulo duracion="2h 49m">
-                    <nombre>Interestelar</nombre>
-                </titulo>
-                <titulo duracion="1h 56m">
-                    <nombre>La vida es bella</nombre>
-                </titulo>
-                <titulo duracion="2h 6m">
-                    <nombre>En busca del destino</nombre>
-                </titulo>
+                <titulo duracion="2h 55m">El padrino</titulo>
+                <titulo duracion="2h 49m">Interestelar</titulo>
+                <titulo duracion="1h 56m">La vida es bella</titulo>
+                <titulo duracion="2h 6m">En busca del destino</titulo>
             </genero>
             <genero nombre="Comedia">
-                <titulo duracion="2h 2m">
-                    <nombre>No se aceptan devoluciones</nombre>
-                </titulo>
-                <titulo duracion="1h 28m">
-                    <nombre>Una película de miedo</nombre>
-                </titulo>
-                <titulo duracion="2h 8m">
-                    <nombre>Juego de gemelas</nombre>
-                </titulo>
-                <titulo duracion="1h 29m">
-                    <nombre>Shrek</nombre>
-                </titulo>
+                <titulo duracion="2h 2m">No se aceptan devoluciones</titulo>
+                <titulo duracion="1h 28m">Una película de miedo</titulo>
+                <titulo duracion="2h 8m">Juego de gemelas</titulo>
+                <titulo duracion="1h 29m">Shrek</titulo>
             </genero>
         </peliculas>
         <programas>
             <genero nombre="Informativo">
-                <titulo duracion="1h">
-                    <nombre>Milenio Noticias</nombre>
-                </titulo>
-                <titulo duracion="2h">
-                    <nombre>Nadie sabía nada</nombre>
-                </titulo>
-                <titulo duracion="1h 30m">
-                    <nombre>Aristegui Noticias</nombre>
-                </titulo>
-                <titulo duracion="1h">
-                    <nombre>Caso cerrado</nombre>
-                </titulo>
+                <titulo duracion="1h">Milenio Noticias</titulo>
+                <titulo duracion="2h">Nadie sabía nada</titulo>
+                <titulo duracion="1h 30m">Aristegui Noticias</titulo>
+                <titulo duracion="1h">Caso cerrado</titulo>
             </genero>
             <genero nombre="Musical">
-                <titulo duracion="3h">
-                    <nombre>La voz México</nombre>
-                </titulo>
-                <titulo duracion="2h">
-                    <nombre>La casa del señor</nombre>
-                </titulo>
-                <titulo duracion="1h 30m">
-                    <nombre>Chente</nombre> 
-                </titulo>
-                <titulo duracion="1h">
-                    <nombre>Entrelíneas</nombre>
-                </titulo>
+                <titulo duracion="3h">La voz México</titulo>
+                <titulo duracion="2h">La casa del señor</titulo>
+                <titulo duracion="1h 30m">Chente</titulo>
+                <titulo duracion="1h">Entrelíneas</titulo>
             </genero>
         </programas>
     </contenido>
