@@ -1,0 +1,16 @@
+<!DOCTYPE catalogovod SYSTEM "serviciovod.dtd">
+<catalogovod>
+    <cuenta correo="ausaldivar568@gmail.com">
+        <perfiles>
+            <perfil usuario="gabito34s" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Prueba">
+                <titulo duracion="2h 55m">&lt;video id=&quot;11&quot;&gt;&amp;lt;&lt;/video&gt;</titulo>
+                <titulo duracion="2h 6m"><![CDATA[ <video id="11">&lt;</video> ]]></titulo>
+            </genero>
+        </peliculas>
+    </contenido>
+</catalogovod>

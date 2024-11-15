@@ -1,0 +1,39 @@
+<!DOCTYPE catalogovod SYSTEM "serviciovod_ep.dtd">
+<catalogovod>
+    <cuenta correo="ausaldivar568@gmail.com">
+        <perfiles>
+            <perfil usuario="gabito34s" idioma="Inglés"/>
+            <perfil usuario="sergio10f" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Drama">
+                <titulo duracion="2h 55m">El padrino</titulo>
+                <titulo duracion="2h 49m">Interestelar</titulo>
+                <titulo duracion="1h 56m">La vida es bella</titulo>
+                <titulo duracion="2h 6m">En busca del destino</titulo>
+            </genero>
+            <genero nombre="Comedia">
+                <titulo duracion="2h 2m">No se aceptan devoluciones</titulo>
+                <titulo duracion="1h 28m">Una película de miedo</titulo>
+                <titulo duracion="2h 8m">Juego de gemelas</titulo>
+                <titulo duracion="1h 29m">Shrek</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Drama">
+                <titulo duracion="1h">Chernobyl</titulo>
+                <titulo duracion="50m">Euphoria</titulo>
+                <titulo duracion="1hm">Dark</titulo>
+                <titulo duracion="1h">Breaking Bad</titulo>
+            </genero>
+            <genero nombre="Ciencia Ficción">
+                <titulo duracion="40m">Agatha All Along</titulo>
+                <titulo duracion="50m">WandaVision</titulo>
+                <titulo duracion="1h 30m">Stranger Things</titulo>
+                <titulo duracion="1h">Love, Death &amp; Robots</titulo>
+            </genero>
+        </series>
+    </contenido>
+</catalogovod>

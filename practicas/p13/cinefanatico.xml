@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="123456789" visitas="3" puntos="561">
+        <nombre>Angel Aguilar</nombre>
+        <correo>ausaldivar568@gmail.com</correo>
+        <telefono tipo="movil">2751062697</telefono>
+    </tarjeta>
+</cinefanatico>

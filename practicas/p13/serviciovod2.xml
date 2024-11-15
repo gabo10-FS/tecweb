@@ -1,0 +1,39 @@
+<!DOCTYPE catalogovod SYSTEM "serviciovod.dtd">
+<catalogovod>
+    <cuenta correo="ausaldivar568@gmail.com">
+        <perfiles>
+            <perfil usuario="gabito34s" idioma="Inglés"/>
+            <perfil usuario="sergio10f" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo duracion="2h 55m">El padrino</titulo>
+                <titulo duracion="2h 49m">Interestelar</titulo>
+                <titulo duracion="1h 56m">La vida es bella</titulo>
+                <titulo duracion="2h 6m">En busca del destino</titulo>
+            </genero>
+            <genero nombre="Comedia">
+                <titulo duracion="2h 2m">No se aceptan devoluciones</titulo>
+                <titulo duracion="1h 28m">Una película de miedo</titulo>
+                <titulo duracion="2h 8m">Juego de gemelas</titulo>
+                <titulo duracion="1h 29m">Shrek</titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Informativo">
+                <titulo duracion="1h">Milenio Noticias</titulo>
+                <titulo duracion="2h">Nadie sabía nada</titulo>
+                <titulo duracion="1h 30m">Aristegui Noticias</titulo>
+                <titulo duracion="1h">Caso cerrado</titulo>
+            </genero>
+            <genero nombre="Musical">
+                <titulo duracion="3h">La voz México</titulo>
+                <titulo duracion="2h">La casa del señor</titulo>
+                <titulo duracion="1h 30m">Chente</titulo>
+                <titulo duracion="1h">Entrelíneas</titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
