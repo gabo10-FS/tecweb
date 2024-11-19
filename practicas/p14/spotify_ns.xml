@@ -1,0 +1,9 @@
+<tw:Spotify xmlns:tw="http://tecnologiasweb.com.mx"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://tecnologiasweb.com.mx spotify_ns.xsd">
+    <tw:Cuenta tw:id="13" tw:plan="Estudiante" tw:fechaIni="2024-11-20">
+        <tw:Nombre>Gabo Saldivar</tw:Nombre>
+        <tw:Correo>gabos@tecweb.tw</tw:Correo>
+        <tw:Telefono tw:tipo="movil">(343) 244 2325</tw:Telefono>
+    </tw:Cuenta>
+</tw:Spotify>
