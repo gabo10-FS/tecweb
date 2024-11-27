@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:complexType name="cuentaType">
+        <xsd:sequence>
+            <xsd:element name="perfiles" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="perfil" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="correo" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="perfilType">
+        <xsd:sequence/>
+        <xsd:attribute name="usuario" type="xsd:string" use="required"/>
+        <xsd:attribute name="idioma" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="generoType">
+        <xsd:sequence>
+            <xsd:element name="titulo" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="nombre" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="regionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MEX"/>
+            <xsd:enumeration value="USA"/>
+            <xsd:enumeration value="ESP"/>
+            <xsd:enumeration value="ARG"/>
+            <xsd:enumeration value="KOR"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="contenidoType">
+        <xsd:sequence>
+            <xsd:element name="peliculas" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="genero" maxOccurs="unbounded" type="generoType"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="region" type="regionType" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="series" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="genero" maxOccurs="unbounded" type="generoType"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="region" type="regionType" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="catalogovodType">
+        <xsd:sequence>
+            <xsd:element name="cuenta" maxOccurs="unbounded" type="cuentaType"/>
+            <xsd:element name="contenido" minOccurs="0" type="contenidoType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="catalogovod" type="catalogovodType"/>
+
+</xsd:schema>
